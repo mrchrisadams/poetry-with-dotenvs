@@ -22,4 +22,26 @@ You end up with something like this instead, to run a command using variables in
 poetry run dotenv run YOUR_COMMAND
 ```
 
+## Another advantage of this approach
+
+One handy side effect of decoupling the two steps here is that switching env vars,or env files once you're in a virtual environment managed by Poetry is pretty straightforward, because python-dotenv, and it's accompanying CLI support is good.
+
+
+```
+# run the same command in a different environment
+poetry run dotenv -e prod.env run YOUR_COMMAND
+
+```
+
+If you've used poetry shell to spin up a shell, then changing environment variables is faster too - you don't need to exit the virtual environment each time.
+
+```
+
+dotenv run python ./example.py # returns "my value"
+
+dotenv set MY_ENV_VAR "a new value"
+
+dotenv run python ./example.py # returns "a new value"
+```
+
 
