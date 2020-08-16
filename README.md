@@ -22,7 +22,8 @@ You end up with something like this instead, to run a command using variables in
 poetry run dotenv run YOUR_COMMAND
 ```
 
-## Another advantage of this approach
+
+## Another advantage of this approach
 
 One handy side effect of decoupling the two steps here is that switching env vars,or env files once you're in a virtual environment managed by Poetry is pretty straightforward, because python-dotenv, and it's accompanying CLI support is good.
 
